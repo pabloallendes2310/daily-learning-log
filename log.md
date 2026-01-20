@@ -25,8 +25,13 @@
 
 ### Objetivo del día
 
-### Qué aprendí (Today I Learned)
+-Seguir mejorando mi logica de algoritmos y react
+-Empezar con Memorizacion y optimizaciones
+
+### Qué aprendí
+
+-bucket queue y su funcionamiento de poder ordenar distintos tipos de datos
 
 ### Código / Práctica
 
-### Bloqueos / Dudas
+hice dos ejercicios de algoritmos en neetcode agrupar Enagramas y obtener la frecuencias mas altas de un arreglo esto con bucket queue
