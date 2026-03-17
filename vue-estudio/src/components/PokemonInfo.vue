@@ -2,7 +2,8 @@
   <section v-if="pokemon">
     <h2>#{{ pokemon.id }} {{ pokemon.name }}</h2>
     <img :src="pokemon.image" :alt="pokemon.name" />
-    <button @click="pokemon.id++">siguiente</button>
+    <button :disabled="pokemonId === 1" @click="pokemonId--">anterior</button>
+    <button @click="pokemonId++">siguiente</button>
   </section>
 </template>
 
@@ -21,7 +22,7 @@ const pokemon = ref<Pokemon | null>(null);
 const pokemonId = ref(1);
 
 const { data, hasError, isLoading, error } = useFetch<PokeAPIPokemonResponse>(
-  `https://pokeapi.co/api/v2/pokemon/${pokemonId.value}`,
+  () => `https://pokeapi.co/api/v2/pokemon/${pokemonId.value}`,
 );
 
 watch(data, (newPokemon) => {
