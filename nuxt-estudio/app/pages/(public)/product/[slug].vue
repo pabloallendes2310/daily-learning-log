@@ -127,12 +127,6 @@ const totalPrice = computed(() => {
             v-for="(image, index) in product.images"
             :key="index"
             @click="selectedImageIndex = index"
-            class="rounded-lg overflow-hidden border-2 transition-all cursor-pointer"
-            :class="
-              selectedImageIndex === index
-                ? 'border-primary-500'
-                : 'border-gray-200 hover:border-gray-300'
-            "
           >
             <img
               :src="image"
@@ -184,11 +178,11 @@ const totalPrice = computed(() => {
           <div class="flex items-center space-x-4">
             <div class="flex items-center border border-gray-300 rounded-lg">
               <UButton
+                :disabled="quantity <= 1"
                 icon="i-lucide-minus"
                 color="neutral"
                 variant="ghost"
                 @click="decreaseQuantity"
-                :disabled="quantity <= 1"
               />
               <span class="px-4 py-2 font-semibold">{{ quantity }}</span>
               <UButton

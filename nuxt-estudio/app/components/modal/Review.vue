@@ -13,10 +13,10 @@ const submitReview = () => {
 
 <template>
   <UModal
-    :open="isOpen"
-    @close="isOpen = false"
     title="Añadir reseña"
     description="Deja tu reseña sobre el producto."
+    :open="isOpen"
+    @close="isOpen = false"
   >
     <UButton
       :label="buttonLabel"
@@ -32,17 +32,17 @@ const submitReview = () => {
           Deja tu reseña sobre el producto.
         </p>
         <form class="grid grid-cols-1 gap-4 mb-5">
-          <input type="hidden" v-model="rating" />
+          <input v-model="rating" type="hidden" />
 
           <!-- Stars -->
           <div class="col-span-1">
             <div class="flex items-center gap-2">
               <UIcon
+                v-for="star in 5"
+                :key="star"
                 name="i-lucide-star"
                 class="text-gray-600 text-xl cursor-pointer"
                 :class="{ 'text-yellow-500': rating >= star }"
-                v-for="star in 5"
-                :key="star"
                 @click="rating = star"
               />
             </div>
