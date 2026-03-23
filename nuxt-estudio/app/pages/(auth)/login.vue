@@ -10,46 +10,46 @@ const fields: AuthFormField[] = [
   {
     name: "email",
     type: "email",
-    label: "Email",
-    placeholder: "Enter your email",
+    label: "Correo electronico",
+    placeholder: "Ingresa tu correo electronico",
     required: true,
   },
   {
     name: "password",
-    label: "Password",
+    label: "Contrasena",
     type: "password",
-    placeholder: "Enter your password",
+    placeholder: "Ingresa tu contrasena",
     required: true,
   },
   {
     name: "remember",
-    label: "Remember me",
+    label: "Recordarme",
     type: "checkbox",
   },
 ];
 
 const providers = [
   {
-    label: "Google",
+    label: "Continuar con Google",
     icon: "i-simple-icons-google",
     onClick: () => {
-      toast.add({ title: "Google", description: "Login with Google" });
+      toast.add({ title: "Google", description: "Iniciar sesion con Google" });
     },
   },
   {
-    label: "GitHub",
+    label: "Continuar con GitHub",
     icon: "i-simple-icons-github",
     onClick: () => {
-      toast.add({ title: "GitHub", description: "Login with GitHub" });
+      toast.add({ title: "GitHub", description: "Iniciar sesion con GitHub" });
     },
   },
 ];
 
 const schema = z.object({
-  email: z.email("Invalid email"),
+  email: z.email("Correo electronico invalido"),
   password: z
-    .string("Password is required")
-    .min(8, "Must be at least 8 characters"),
+    .string("La contrasena es obligatoria")
+    .min(8, "Debe tener al menos 8 caracteres"),
 });
 
 type Schema = z.output<typeof schema>;
@@ -64,8 +64,8 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     <UPageCard class="w-full max-w-md">
       <UAuthForm
         :schema="schema"
-        title="Login"
-        description="Enter your credentials to access your account."
+        title="Iniciar sesion"
+        description="Ingresa tus credenciales para acceder a tu cuenta."
         icon="i-lucide-user"
         :fields="fields"
         :providers="providers"

@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h3>hola mudno - dashboard page</h3>
     <NuxtPage />
   </div>
 </template>

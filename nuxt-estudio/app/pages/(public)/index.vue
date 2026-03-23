@@ -2,10 +2,12 @@
 
 <template>
   <div>
-    <h1>Home page</h1>
+    <HomeCTA />
 
-    <UButton icon="i-lucide-rocket" size="md" color="primary" variant="solid"
-      >Button</UButton
-    >
+    <HomeFeatures class="mt-10" />
+
+    <HomeTestimonials class="mt-10" />
+
+    <HomeStack class="my-10" />
   </div>
 </template>

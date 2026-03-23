@@ -15,26 +15,26 @@ const fields: AuthFormField[] = [
   {
     name: "email",
     type: "email",
-    label: "Email",
-    placeholder: "Enter your email",
+    label: "Correo electronico",
+    placeholder: "Ingresa tu correo electronico",
     required: true,
   },
   {
     name: "password",
-    label: "Password",
+    label: "Contrasena",
     type: "password",
-    placeholder: "Enter your password",
+    placeholder: "Ingresa tu contrasena",
     required: true,
   },
 ];
 
 const schema = z.object({
   name: z.string("Nombre completo es requerido"),
-  email: z.email("Invalid email"),
+  email: z.email("Correo electronico invalido"),
 
   password: z
-    .string("Password is required")
-    .min(8, "Must be at least 8 characters"),
+    .string("La contrasena es obligatoria")
+    .min(8, "Debe tener al menos 8 caracteres"),
 });
 
 type Schema = z.output<typeof schema>;
@@ -50,7 +50,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
       <UAuthForm
         :schema="schema"
         title="Crear una cuenta"
-        description="Enter your credentials to create your account."
+        description="Ingresa tus credenciales para crear tu cuenta."
         icon="i-lucide-user"
         :fields="fields"
         :ui="{

@@ -42,7 +42,7 @@ const responsiveMenu = ref([
     :toggle="{
       color: 'primary',
       variant: 'subtle',
-      class: 'rounded-full',
+      class: 'rounded-full my-2',
     }"
   >
     <template #title>
@@ -77,7 +77,7 @@ const responsiveMenu = ref([
       <UNavigationMenu
         :items="responsiveMenu"
         orientation="vertical"
-        class="-mx-2.5"
+        class="-mx-2.5 mb-2"
       />
     </template>
   </UHeader>

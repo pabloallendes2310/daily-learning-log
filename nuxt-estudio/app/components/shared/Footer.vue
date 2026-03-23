@@ -1,5 +1,5 @@
 <template>
-  <USeparator icon="i-simple-icons-nuxtdotjs" type="solid" class="h-px" />
+  <USeparator icon="i-simple-icons-nuxtdotjs" type="solid" class="h-px mt-5" />
   <UFooter>
     <template #left>
       <p class="text-muted text-sm">
